@@ -1,0 +1,46 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           datagram
+version:        0.1.0.0
+description:    Monadic UDP Datagram interface for Haskell
+homepage:       https://github.com/Yannissss/datagram#readme
+bug-reports:    https://github.com/Yannissss/datagram/issues
+author:         Yannissss
+maintainer:     yannissss@nowhere.fr
+copyright:      2020 Yannissss
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Yannissss/datagram
+
+library
+  other-modules:
+      Paths_datagram
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite datagram-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_datagram
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , datagram
+  default-language: Haskell2010
